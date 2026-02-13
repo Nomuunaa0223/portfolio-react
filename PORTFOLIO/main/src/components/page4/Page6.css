@@ -1,0 +1,167 @@
+.work-section {
+  background-color: #050505;
+  padding: 100px 10%;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  perspective: 2000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.steps-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 20px;
+  width: 300px;
+  position: relative;
+  backdrop-filter: blur(5px);
+  min-height: 400px;
+  /* Анхны байдал: Үл үзэгдэх, хойшоо алслалттай */
+  opacity: 0;
+  transform: translateZ(-300px) translateY(50px) rotateX(15deg);
+
+  /* Анимаци: Нэг нэгээрээ гарах гол түлхүүр */
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Scroll хийж ирэхэд React-аас нэмэгдэх класс */
+.step-card.show {
+  opacity: 1 !important;
+  transform: translateZ(0) translateY(0) rotateX(0) !important;
+}
+
+/* Hover эффект: Урагшаа товойх */
+.step-card:hover {
+  transform: translateZ(100px) scale(1.05) !important;
+  background: rgba(138, 43, 226, 0.1);
+  border-color: #8a2be2;
+  z-index: 100;
+}
+
+/* Булангийн L хэлбэр */
+.corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+.top-left {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.top-right {
+  top: -1px;
+  right: -1px;
+  border-left: none;
+  border-bottom: none;
+}
+.bottom-left {
+  bottom: -1px;
+  left: -1px;
+  border-right: none;
+  border-top: none;
+}
+.bottom-right {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+.step-icon {
+  font-size: 45px;
+  margin-bottom: 25px;
+  display: block;
+}
+.step-title {
+  font-size: 24px;
+  margin-bottom: 35px;
+  letter-spacing: 2px;
+}
+.step-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+.work-title {
+  margin-bottom: 95px;
+  font-size: 54px;
+}
+
+@media (max-width: 768px) {
+  .work-section {
+    height: auto; /* Өндрийг дэлгэц дүүрэн биш, контентоороо болгох */
+    padding: 60px 20px;
+    perspective: 1000px; /* 3D алслалтыг багасгах */
+  }
+
+  .work-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .steps-grid {
+    flex-direction: column; /* Картуудыг дээр дээрээс нь цувуулах */
+    align-items: center;
+    gap: 30px;
+  }
+
+  .step-card {
+    width: 100%; /* Утасны өргөнийг дүүргэх */
+    max-width: 350px; /* Гэхдээ хэт өргөн болохоос сэргийлнэ */
+    min-height: auto;
+    padding: 40px 20px;
+    /* Утсан дээр 3D эффект хэт хүчтэй байвал зүгээр л доороос гарч ирдэг болгох */
+    transform: translateY(50px);
+  }
+
+  /* Утсан дээр hover хийх боломжгүй тул эффектийг зөөлрүүлэх */
+  .step-card:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    background: rgba(138, 43, 226, 0.15);
+  }
+
+  .step-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .step-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .step-text {
+    font-size: 14px; /* Утсан дээр текстийг арай тод болгох */
+  }
+}
+
+/* Маш жижиг гар утас (max-width: 480px) */
+@media (max-width: 480px) {
+  .work-title {
+    font-size: 26px;
+  }
+
+  .step-card {
+    padding: 30px 15px;
+  }
+  .step-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}

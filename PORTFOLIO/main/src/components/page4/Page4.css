@@ -1,0 +1,42 @@
+.tom {
+  background-color: black;
+  position: relative;
+  padding: 0;
+}
+img {
+  width: 900px;
+  height: auto;
+  filter: blur(0.5px);
+}
+.goal {
+  
+  position: absolute;
+  width: 500px;
+  right: 300px;
+  top: 150px;
+}
+.label {
+  color: rgba(138, 43, 226,0.6);
+  font-family: "Orbitron", sans-serif;
+  font-size: 34px;
+  padding: 25px;
+}
+.desc1 {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+.goal1 {
+ 
+  position: absolute;
+  width: 500px;
+  right: 300px;
+  top: 350px;
+}
+.goal2 {
+ 
+  position: absolute;
+  width: 500px;
+  right: 300px;
+  top: 650px;
+}

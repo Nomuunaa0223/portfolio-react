@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section {
+  width: 100%;
+  height: 100vh;
+  background-color: black; /* Танд байгаа Header-тэй ижил дэвсгэр */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.contact-title {
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+  font-weight: 800;
+}
+
+.contact-title span {
+  color: #8a2be2;
+  text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+}
+
+/* Зүүн талын мэдээлэл */
+.contact-info .info-item {
+  margin-bottom: 40px;
+}
+
+.contact-info h3 {
+  font-size: 14px;
+  color: #8a2be2;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+.info-item h3 {
+  font-size: 20px;
+}
+.contact-info p,
+.social-links a {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links a:hover {
+  color: white;
+  transform: translateX(10px);
+}
+
+/* Баруун талын Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8a2be2;
+  background: rgba(138, 43, 226, 0.05);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
+}
+
+.submit-btn {
+  background: #8a2be2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #7022b8;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+  transform: translateY(-3px);
+}
+.by {
+  position: relative;
+  background-color: black;
+  margin-top: auto; /* Контентоос доош нь шахах */
+}
+
+.zuraas {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(138, 43, 226, 0.4),
+    transparent
+  ); /* Зураасыг хоёр тал руугаа ууссан эффекттэй болгов */
+}
+
+.by p {
+  display: flex;
+  justify-content: center; /* Текстийг голлуулах */
+  align-items: center;
+  padding: 20px 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: "Orbitron", sans-serif;
+}
+@media (max-width: 768px) {
+  /* Бүтцийг нэг багана болгох (Social-ыг доор нь оруулахын тулд) */
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  /* Зүүн талын мэдээллийг нуух эсвэл зөвхөн хэрэгтэй хэсгийг үлдээх */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Зүүн талд байсан Info-нуудыг доор нь оруулах тохиргоо */
+  .info-item {
+    margin-left: 90px;
+    margin-bottom: 55px;
+    font-size: 14px;
+  }
+
+  /* Social links-ийг Формын доор голлуулах */
+  .social-links {
+    flex-direction: row; /* Хажуу тийш нь өрнө */
+    justify-content: center;
+    gap: 0px;
+    margin-top: 0px;
+    order: 3; /* Формын дараа харагдуулна */
+  }
+
+  .social-links a {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Форм хэсэг */
+  .contact-form {
+    order: 2; /* Форм дунд нь байна */
+  }
+
+  /* Email, Утас зэргийг доор нь голлуулж харуулах */
+  .contact-info {
+    order: 4; /* Хамгийн доор */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+  }
+
+  .info-item h3 {
+    font-size: 16px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Footer-ийг илүү зайтай болгох */
+  .by {
+    position: relative;
+    margin-top: 800px;
+  }
+  .by p {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .input-group {
+    align-items: center;
+    justify-content: center;
+    margin-left: 90px;
+    grid-template-columns: 1fr; /* Нэг багана болгох */
+  }
+  textarea {
+    margin-left: 90px;
+  }
+  .submit-btn {
+    margin-left: 90px;
+  }
+  .contact-title {
+    font-size: 40px;
+    margin-left: 180px;
+  }
+}
+/* Маш жижиг дэлгэц дээр багтахгүй бол бага зэрэг шахах */
+@media (max-width: 480px) {
+  .contact-content {
+    gap: 10px;
+  }
+
+  .contact-title {
+    width: 100%;
+    font-size: 28px;
+    margin-left: 110px;
+  }
+  .info-item h3 {
+    font-size: 12px;
+  }
+
+  .contact-info p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .social-links a {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .contact-info {
+    order: 4; /* Хамгийн доор */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: -80px;
+  }
+ .submit-btn{
+  font-size: 10px
+ }
+ .by p {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

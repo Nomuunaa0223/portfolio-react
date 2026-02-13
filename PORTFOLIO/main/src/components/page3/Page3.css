@@ -1,0 +1,209 @@
+.page3-container {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.horiz-gallery-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.horiz-gallery-strip {
+  display: flex;
+  height: 100%;
+  /* width: 300% нь JS дээр автоматаар зохицуулагдана */
+}
+
+.project-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-content {
+  display: flex;
+  width: 85%;
+  max-width: 1400px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+/* Текст хэсэг */
+.project-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+.label-text {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.title-text {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  font-family: "Orbitron", sans-serif;
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 40px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Жагсаалт */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.feature-list li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.check-icon {
+  color: #fff;
+  font-size: 16px;
+}
+
+.project-img-wrap {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-img-wrap img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+#portfolio {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .horiz-gallery-wrapper {
+    overflow-x: auto; /* Хөндлөн скролл зөвшөөрөх */
+    scroll-snap-type: x mandatory; /* Зураг бүр дээр очиж наалдах эффект */
+    display: flex;
+    -webkit-overflow-scrolling: touch; /* iOS дээр зөөлөн скролл хийх */
+    height: 100vh; /* Бүтэн дэлгэц */
+  }
+
+  .horiz-gallery-strip {
+    display: flex;
+    flex-direction: row; /* Хажуу тийшээ цувраа хэвээрээ */
+    width: max-content; /* Доторх контентоороо өргөнөө авна */
+    height: 100%;
+  }
+
+  .project-section {
+    width: 100vw; /* Секшн бүр дэлгэцийн өргөнтэй ижил */
+    height: 100vh;
+    scroll-snap-align: start; /* Скролл хийхэд энэ цэг дээр ирж наалдана */
+    flex-shrink: 0; /* Жижигрэхээс сэргийлнэ */
+    padding: 20px;
+  }
+
+  .project-content {
+    flex-direction: column; /* Текст, зураг хоёр дээр дээрээсээ харагдана */
+    gap: 20px;
+    width: 90%;
+    height: 90%;
+    justify-content: center;
+  }
+
+  /* Зургийг текст дээр багтаахын тулд хэмжээг нь багасгах */
+  .project-img-wrap {
+    width: 20%;
+    height: 40%;
+    order: 1; /* Зургийг дээр нь гаргах */
+  }
+
+  .project-img-wrap img {
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .project-info {
+    order: 2; /* Текстийг доор нь гаргах */
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .title-text {
+    font-size: 28px; /* Утсан дээр багтахаар жижигсгэв */
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .feature-list {
+    margin-left: 220px;
+  }
+  .feature-list li {
+    font-size: 12px;
+    color: #eee;
+  }
+  /* Скролл барыг нуух */
+  .horiz-gallery-wrapper::-webkit-scrollbar {
+  }
+  .label-text {
+    font-size: 12px;
+  }
+}
+
+/* Маш жижиг гар утас (max-width: 480px) */
+@media (max-width: 480px) {
+  .project-section {
+    padding: 50px 0;
+  }
+
+  .title-text {
+    font-size: 24px;
+  }
+
+  .label-text {
+    font-size: 10px;
+  }
+  .feature-list {
+    margin-left: 110px;
+  }
+  .feature-list li {
+    font-size: 10px;
+    color: #eee;
+    line-height: 1;
+  }
+  .description {
+    font-size: 12px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+}
